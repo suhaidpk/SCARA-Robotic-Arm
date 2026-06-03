@@ -1,0 +1,13 @@
+# Processing build output
+GUI/SCARA_GUI/out/
+GUI/SCARA_GUI/application.*/
+
+# Arduino build artifacts
+Arduino/SCARA_Arduino/build/
+*.elf
+*.hex
+*.map
+
+# OS
+.DS_Store
+Thumbs.db
