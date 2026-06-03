@@ -1,6 +1,7 @@
 # SCARA Robotic Arm with GUI Control System
 > Real-time joint control and forward kinematics display via Processing GUI — PCA9685 + Arduino
 
+[![Demo Video](https://img.shields.io/badge/YouTube-Demo_Video-red?logo=youtube)]([https://youtu.be/cPyBFfTFSc4](https://youtube.com/shorts/6R_z6v3E24E))
 [![GitHub](https://img.shields.io/badge/Author-suhaidpk-black?logo=github)](https://github.com/suhaidpk)
 
 ---
@@ -32,35 +33,7 @@ position is recordable, every sequence is replayable.
 
 ## System Architecture
 
-```
-┌─────────────────────────────────┐
-│        Processing GUI            │
-│  Joint sliders + FK display      │
-│  Record · Playback · Import/     │
-│  Export positions                │
-└──────────────┬──────────────────┘
-               │ Serial (9600 baud)
-               │ plain-text commands
-┌──────────────▼──────────────────┐
-│            Arduino               │
-│   Parses commands, drives PWM    │
-└──────────────┬──────────────────┘
-               │ I²C
-┌──────────────▼──────────────────┐
-│          PCA9685                 │
-│   16-channel PWM servo driver    │
-└──────┬──────────────────────────┘
-       │ PWM signals
-  ┌────▼────┐  ┌──────┐  ┌──────────────────┐
-  │Shoulder │  │ Elbow│  │Lead Screw (Z-axis)│
-  │ Servo   │  │Servo │  │MG996R Continuous  │
-  └─────────┘  └──────┘  └──────────────────┘
-                                    ┌──────────┐
-              Arduino Pin 9 ───────►│ Gripper  │
-                                    └──────────┘
-```
 
----
 
 ## Hardware
 
@@ -68,8 +41,8 @@ position is recordable, every sequence is replayable.
 |---|---|
 | Arm type | SCARA (2 rotational + 1 linear Z-axis) |
 | PWM Driver | PCA9685 (I²C, 16-channel) |
-| Shoulder | Standard servo — PWM channel 0 |
-| Elbow | Standard servo — PWM channel 1 |
+| Shoulder | Digital servo — PWM channel 0 |
+| Elbow | Digital servo — PWM channel 1 |
 | Z-axis | MG996R continuous rotation servo — PWM channel 2 |
 | Gripper | Solenoid / servo — Arduino digital pin 9 |
 | Controller | Arduino Uno / Mega |
@@ -238,26 +211,6 @@ In `SCARA_GUI.pde`, update to match your physical arm:
 ```java
 float upperArmLength = 100.0;   // Shoulder-to-elbow in mm
 float forearmLength  = 100.0;   // Elbow-to-gripper in mm
-```
-
----
-
-## .gitignore
-
-```
-# Processing build output
-GUI/SCARA_GUI/out/
-GUI/SCARA_GUI/application.*/
-
-# Arduino build artifacts
-Arduino/SCARA_Arduino/build/
-*.elf
-*.hex
-*.map
-
-# OS
-.DS_Store
-Thumbs.db
 ```
 
 ---
