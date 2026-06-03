@@ -25,7 +25,7 @@ position is recordable, every sequence is replayable.
 
 ## GUI Screenshot
 
-![GUI screenshot](images/gui_screenshot.png)
+![GUI screenshot](images/gui.png)
 <!-- Strongly recommended: add a screenshot of your Processing GUI here.
      It immediately shows recruiters what you built. -->
 
@@ -33,7 +33,7 @@ position is recordable, every sequence is replayable.
 
 ## System Architecture
 
-
+![block_diagram](images/block.png)
 
 ## Hardware
 
