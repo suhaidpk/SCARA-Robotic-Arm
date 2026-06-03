@@ -146,8 +146,6 @@ Home position → Rotate shoulder + elbow to object
 **3. Lead screw continuous servo not stopping cleanly**
 → Identified that `LEAD_STOP = 0` (zero PWM) doesn't produce a proper neutral pulse. Changed to `300` (~1.5 ms pulse) to reliably stop the MG996R.
 
-**4. [Add one more real challenge you faced during the build]**
-→ [How you fixed it]
 
 ---
 
