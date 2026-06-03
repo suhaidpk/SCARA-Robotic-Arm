@@ -6,7 +6,7 @@
 
 ---
 
-![SCARA arm photo](images/scara_arm.jpg)
+![SCARA arm photo](images/scara.jpg)
 <!-- Add a real photo of your physical arm here -->
 
 ---
