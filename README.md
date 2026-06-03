@@ -118,12 +118,6 @@ Home position → Rotate shoulder + elbow to object
 → Raise Z axis → Return home
 ```
 
-![Pick and place GIF](images/pick_place.gif)
-<!-- Record a 5–10 second phone video of the arm doing this and convert to GIF
-     at ezgif.com — it plays automatically on GitHub and is very impressive -->
-
----
-
 ## Results
 
 - Positioning repeatability: ±[ ] mm
@@ -163,9 +157,9 @@ scara-arm-gui-control/
 │       └── SCARA_Arduino.ino   # Arduino firmware
 ├── positions/                  # Exported position sequence files (.txt)
 ├── images/
-│   ├── scara_arm.jpg
-│   ├── gui_screenshot.png
-│   └── pick_place.gif
+│   ├── scara.jpg
+│   ├── gui.png
+│   └── block.png
 ├── .gitignore
 └── README.md
 ```
